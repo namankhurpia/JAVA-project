@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class Book {
     private String name,author;
-    private int price;
+    int price;
 
     //constructor for initializing
     public Book(String name, String author, int price) {
@@ -35,28 +35,11 @@ public class Book {
     //equals override
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Book other = (Book) obj;
-        if (this.price != other.price) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.author, other.author)) {
-            return false;
-        }
-        return true;
-        
-        
+       Book b=(Book)obj;
+       if(this.name.equals(b.name) && this.author.equals(b.author) && this.price==(b.price))
+           return true;
+       else
+           return false;
     }
 
     //toString override
